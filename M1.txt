@@ -1,0 +1,2 @@
+I - Get pocketsphinx or google api to work properly.
+II - Basic input from user.
