@@ -11,7 +11,7 @@ class MyRecognizer(Recognizer):
         pause_buffer_count = int(math.ceil(self.pause_threshold / seconds_per_buffer)) # number of buffers of quiet audio before the phrase is complete
         quiet_buffer_count = int(math.ceil(self.quiet_duration / seconds_per_buffer)) # maximum number of buffers of quiet audio to retain before and after
         front_time = 0
-
+        
         # store audio input until the phrase starts
         while True:
             front_time += seconds_per_buffer
@@ -19,16 +19,18 @@ class MyRecognizer(Recognizer):
                 return None, front_time, 0, 0
 
             buffer = source.stream.read(source.CHUNK)
+            #print buffer  -  NOOOOOO DON'T, IT'S AN AUDIO CHUNK, IT WILL CRASH THE CMD PROMPT
             if len(buffer) == 0: break # reached end of the stream
             frames.append(buffer)
 
             # check if the audio input has stopped being quiet
             energy = audioop.rms(buffer, source.SAMPLE_WIDTH) # energy of the audio signal
-            if energy > self.energy_threshold:
+            if energy > self.energy_threshold:   #normal audio threshold for sil;ent scenes is ~300-400, so the energy_threshold is not that important sub 200 in a normal mic enviroment.
                 break
-
-            if len(frames) > quiet_buffer_count: # ensure we only keep the needed amount of quiet buffers
-                frames.popleft()
+                
+            #this next bit seems useless, because ???frames is empty in every test???
+            #if len(frames) > quiet_buffer_count: # ensure we only keep the needed amount of quiet buffers
+            #    frames.popleft()
                 
         # read audio input until the phrase ends
         talk_time = 0
@@ -44,6 +46,7 @@ class MyRecognizer(Recognizer):
 
             # check if the audio input has gone quiet for longer than the pause threshold
             energy = audioop.rms(buffer, source.SAMPLE_WIDTH) # energy of the audio signal
+            #print energy,
             if energy > self.energy_threshold:
                 pause_count = 0
             else:
@@ -61,5 +64,5 @@ class MyRecognizer(Recognizer):
         # obtain frame data
         frame_data = b"".join(list(frames))
         
-        return AudioData(source.RATE, self.samples_to_flac(source, frame_data)), front_time, talk_time, end_time
+        return AudioData(source.RATE, self.samples_to_flac(source, frame_data)), front_time, talk_time, end_time, frame_data
 
