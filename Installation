@@ -1,0 +1,7 @@
+Installing and dependancies:
+
+1. Download repo.
+2. Install SpeechRecognition: pip install SpeechRecognition
+3. Install Pyaudio: people.csail.mit.edu/hubert/pyaudio/packages/pyaudio-0.2.8.py27.exe
+
+PS: Pyaudio is required by SpeechRecognition.
