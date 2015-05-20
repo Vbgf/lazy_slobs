@@ -1,0 +1,12 @@
+body{
+	background: url(blurred-background.jpg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#MAIN3{
+	background: url(brown-paper-texture-wallpapers.jpg);
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+	margin-bottom: 0px;
+}

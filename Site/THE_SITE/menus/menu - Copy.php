@@ -1,0 +1,8 @@
+<?php
+echo '	<img ></img>
+		
+		<form method="get" action="Blog/Logout.php">
+			<button style="position:relative;margin-bottom:-100px;margin-left:880px;margin-top:54px;border-color:red; width: 200px;background-color:black;color:red" type="submit">Logout</button>
+		</form>';
+
+?>

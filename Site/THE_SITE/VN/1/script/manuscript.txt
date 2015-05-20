@@ -1,0 +1,68 @@
+#{music:NHK_-_Purupuru_pururin_rin.mp3;sound:horse.ogg;}1.png	"Looks like things just"
+#{sound:horse.ogg;}2.png	"...got smexy"
+3.png	"YEAAAAAAAA"
+#{menu-pic:;menu-music:;menu-sound:;menu-script:;}3.png	"..."
+	OH YEAAAAAAAA
+	13
+3.png	69
+4.gif	999
+3.png	"THE\tEND"
+#{music:none;}3.png	JK	Enter	No
+Enter{
+1.png	You chose Enter	A	B
+A{
+#{sound:horse.ogg;}2.png	A	Y	N
+Y{
+3.png	Y	1	2
+1{
+1.png	You chose 1. WOW so unpredictable.
+	we
+	ew
+3.png	Choose your destiny	wanna live	I wanna die	I wanna be the best	No
+wanna live{
+#{music:NHK_-_Purupuru_pururin_rin.mp3;}1.png	No :(
+	Ok maybe just this once
+	Be thankful
+	here	Go to the black door	Go to the white door
+Go to the black door{
+1.png	You die.
+}
+Go to the white door{
+2.png	You live.
+1.png	You live.
+2.png	You live.
+3.png	You live.
+	You live.
+1.png	You live.
+2.png	You live.!!!!!!!!!!!
+4.gif	or not :3
+}
+3.png	You\nare\nwelcome
+}
+I wanna die{
+1.png	No :(
+}
+I wanna be the best{
+1.png	No :(
+}
+No{
+#{music:NHK_-_Purupuru_pururin_rin.mp3;}2.png	K :)
+}
+}
+2{
+1.png	ew
+}
+}
+N{
+3.png	N
+}
+}
+B{
+3.png	"YOU CHOSE B"
+	CONGRATZ
+	YOU WON
+}
+}
+No{
+1.png	You chose No
+}
